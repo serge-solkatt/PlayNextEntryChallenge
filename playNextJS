@@ -1,0 +1,31 @@
+
+
+
+let mainText = document.getElementById("mainText");
+mainText.style.maxWidth = "800px";
+
+Vue.component('img-slider', {
+  template: '#img-slider-template',
+  replace: true
+})
+
+new Vue({
+  el: '#demo',
+});
+
+new Vue({
+  el: "#app",
+  data: {
+    activeItem: 'home'
+  },
+  methods: {
+  	isActive (menuItem) {
+      return this.activeItem === menuItem
+    },
+    setActive (menuItem) {
+      this.activeItem = menuItem
+    }
+  }
+});
+
+

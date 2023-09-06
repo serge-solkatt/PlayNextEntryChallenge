@@ -1,0 +1,202 @@
+
+
+.container {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'main-content'
+    'left-sidebar'
+    'right-sidebar'
+    'footer';
+}
+
+.container>* {
+  padding: 1rem;
+}
+
+.container>.header {
+  grid-area: header;
+
+}
+
+.container>.main-content {
+  grid-area: main-content;
+  max-width: 800px;
+}
+
+.container>.left-sidebar {
+  grid-area: left-sidebar;
+  background: #ABD8D6;
+  max-width: 800px;
+}
+
+.container>.right-sidebar {
+  grid-area: right-sidebar;
+  background: #c5ed77;
+  max-width: 800px;
+}
+
+.container>.footer {
+  grid-area: footer;
+  background: #D8ABC0;
+  max-width: 800px;
+}
+
+@media (min-width:768px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'header header'
+      'main-content main-content'
+      'left-sidebar right-sidebar'
+      'footer footer';
+  }
+}
+
+@media (min-width:1024px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      'header header header header'
+      'left-sidebar main-content main-content right-sidebar'
+      'footer footer footer footer';
+  }
+}
+
+.mainText {
+  &--container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.tab {
+  &--specification {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.tab {
+  &--description {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+body {
+  font-family: 'Lexend', sans-serif;
+  color: #393939;
+  text-align: center;
+  font-size: calc(15px + 0.390625vw);
+  font-weight: 200;
+  line-height: 1em;
+  line-height: 1.2em;
+  letter-spacing: 0;
+  background-color: #ECDED5;
+}
+
+h1 {
+  font-family: 'Lexend', sans-serif;
+  color: #393939;
+  text-align: center;
+  font-size: calc(28px + 0.390625vw);
+  font-weight: 200;
+  line-height: 1em;
+  line-height: 1.2em;
+  letter-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.slider {
+  &__container {
+    #slider-main {
+      max-width: 600px;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+}
+
+.slider {
+  &__container {
+    #overflow-slides {
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+}
+
+#slider-container #slides .inner {
+  width: 400%;
+}
+
+#slider-container #slides .inner {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+
+  -webkit-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  -moz-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  -o-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  -ms-transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+
+  -webkit-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  -moz-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  -o-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  -ms-transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+  transition-timing-function: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+#slider-container #slides article {
+  width: 25%;
+  float: left;
+}
+
+#slider-container #slide1:checked~#slides .inner {
+  margin-left: 0;
+}
+
+#slider-container #slide2:checked~#slides .inner {
+  margin-left: -100%;
+}
+
+#slider-container #slide3:checked~#slides .inner {
+  margin-left: -200%;
+}
+
+#slider-container #slide4:checked~#slides .inner {
+  margin-left: -300%;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#slider-container label {
+  background: #CCC;
+  display: inline-block;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+#slider-container #slide1:checked~label[for="slide1"],
+#slider-container #slide2:checked~label[for="slide2"],
+#slider-container #slide3:checked~label[for="slide3"],
+#slider-container #slide4:checked~label[for="slide4"] {
+  background: #333;
+}

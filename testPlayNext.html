@@ -1,0 +1,135 @@
+<div id="app">
+    <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@2.5.10/dist/vuetify.min.css">
+    </head>
+    <body>
+    <script>
+  new Vue().$mount('#demo');
+</script>
+    <script>
+  const ImgSlider = {
+    template: '#img-slider-template',
+  };
+new Vue({
+components: {
+'img-slider': ImgSlider,
+},
+}).$mount('#demo');
+</script>
+    <p>
+    <header class="header">
+        <h1>Custom luxury gifts by Amabie</h1>
+    </header>
+    <div id="slider-container">
+        <script type="text/x-template" id="img-slider-template">
+            <div id="slider-main">
+                <input checked="" type="radio" name="slider" id="slide1" selected="false">
+                <input type="radio" name="slider" id="slide2" selected="false">
+                <input type="radio" name="slider" id="slide3" selected="false">
+                <input type="radio" name="slider" id="slide4" selected="false">
+                <div id="slides">
+                    <div id="overflow-slides">
+                        <div class="inner">
+                            <article>
+                                <img src="https://sun9-62.userapi.com/impg/LS7Xa12iB0epwagNprDcBsjZcbMZvi8Z9S-INg/QPWwfsyjQVc.jpg?size=600x400&quality=95&sign=44e29f10f0ebd36af5f872bd17a46df4&type=album">
+                            </article>
+                            <article>
+                                <img src="https://sun9-35.userapi.com/impg/K-8hQDXtpG82erqaeclsrI-khlN3FNPS8aB3kg/SDaBJWvLCY4.jpg?size=600x400&quality=95&sign=e270f7e8ce98cbdb1aafc2eadd141e7e&type=album">
+                            </article>
+                            <article>
+                                <img src="https://sun9-67.userapi.com/impg/75E5JgF2yRAmfc5wAvbNjRjaKeOdFMlBwrfcZQ/Vay9fN61vXw.jpg?size=600x400&quality=95&sign=1ed615944b19a6c0a0b46d389c262105&type=album">
+                            </article>
+                            <article>
+                                <img src="https://sun9-39.userapi.com/impg/Vb9ZWIo-mY2xllQB8_QlbdQNuGYgXfNAlR7EFg/HPmO35iiKXs.jpg?size=600x400&quality=95&sign=6fe44565e93fed9c2558e3edcdc2151d&type=album">
+                            </article>
+                        </div>
+                        <!-- .inner -->
+                    </div>
+                    <!-- #overflow -->
+                </div>
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+                <label for="slide4"></label>
+            </div>
+        </script>
+        <div id="demo">
+            <img-slider></img-slider>
+        </div>
+    </div>
+</div>
+<v-tabs v-model="tab" color="deep-purple-accent-4" align-tabs="center">
+    <v-tab value="1">Description / </v-tab>
+    <v-tab value="2">Specification</v-tab>
+</v-tabs>
+<v-window v-model="tab">
+    <v-window-item key="1" value="1">
+        <!-- Content for description tab -->
+    </v-window-item>
+    <v-window-item key="2" value= "2">
+        <!-- Content for specification tab -->
+        </window-item>
+        ...
+
+        </window>
+        <p>
+            Price: from $10 000 to $1 billion, depending on the intricacies of the design you choose for your gift
+        </p>
+        </p>
+        <div class="left-sidebar">
+            <div id="tab-container">
+                <div id="app">
+                    <div class="container">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li class="nav-item">
+                                <a class="nav-link" @click.prevent="setActive('description')" :class="{ active: isActive('description') }" href="#description">Description</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" @click.prevent="setActive('specification')" :class="{ active: isActive('specification') }" href="#specification">Specification</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content py-3" id="myTabContent">
+                            <div class="tab-pane fade" :class="{ 'active show': isActive('home') }" id="tab-description"></div>
+                            <div id="mainText">
+                                <p>All the gifts we make, like the Amabie 'Avente' gift set (shown on the illustration above), can only be ordered in an individually tailored fashion. You get to choose the color, size, hardware, & more — all according to your taste.</p>
+                                <p>Our collections are extremely limited: we never make the same gift twice. Let that sink in: your gift will be the only such gift in the world.</p>
+                                <p>We use Palmellato leather sourced from Antiba, an Italian tannery known for its exceptional quality. This leather is highly resistant to scratches, dirt, stains, & water damage — all while offering a luxurious touch and appearance. It undergoes vegetable tanning for an excellent scent & environmentally-friendly production process. The full-grain leather we use is considered the epitome of grandeur – it's richly textured & opulent.</p>
+                                <p>Every piece is meticulously crafted by the skilled Amabie artisans who pour their souls into making the absolute top-notch gifts.
+
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" :class="{ 'active show': isActive('profile') }" id="tab-specification">
+                            <h3>'Avente' Saddle Bag dimensions:</h3>
+                            <ul>
+                                <li>Length: 30 centimeters (11.8 inches)</li>
+                                <li>Width: 15 centimeters (5.9 inches)</li>
+                                <li>Height: 23 centimeters (9.1 inches).</li>
+                                <li>Handle drop: 11 centimeters (4.3 inches)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="footer">Copyright by Amabie LLC, 2023</div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vuetify@2.5.10/dist/vuetify.min.js"></script>
+        <script>
+													<script>
+new Vue({
+  el: '#app',
+  vuetify: new Vuetify(),
+  data() {
+    return {
+      tab: null,
+    };
+  },
+});
+</script>
+        </div>
+        </body>
+        </html>
